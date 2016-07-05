@@ -1,3 +1,4 @@
+"use strict";
 /*
   TODO: Modularize this code with IIFE or Browserify
  */
@@ -115,12 +116,3 @@ Gauntlet.GuildHall.Sorcerer = function() {
   this.intelligenceBonus = this.intelligenceBonus + 30;
 };
 Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
-
-
-/*
-    STEALTH CLASSES
-      - Thief
-      - Ninja
-      - Assassin
- */
-
