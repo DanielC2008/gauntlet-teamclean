@@ -1,4 +1,4 @@
-
+//create god function with base stats
 const God = function(){
 	this.characterName = null,
 	this.skill = 50,
@@ -6,8 +6,7 @@ const God = function(){
 	this.speed = 50,
 	this.initiative = 50
 }
-
-
+/// create greek function with greek specific stats
 var Greek = function(name,health,strength,speed) {
 	this.name = name
 	this.origin = "Greek",
@@ -15,37 +14,24 @@ var Greek = function(name,health,strength,speed) {
 	this.strengthBonus = strength,
 	this.speedBonus = speed
 }
+
 Greek.prototype = new God();
+//create persian fuction with Persian specific stats
+var Persian = function(name,health,strength,speed) {
+	this.name = name
+	this.origin = "Persian",
+	this.health = health,
+	this.strengthBonus = strength,
+	this.speedBonus = speed
+}
+
+Persian.prototype = new God();
+// create each enemy
 var Zeus = new Greek("Zeus",45,65,10);
 var Athena = new Greek("Athena",50,40,15);
 var Artemis = new Greek("Artemis",40,60,20);
-console.log("Zeus",Zeus );
-console.log("Athena",Athena );
-console.log("Artemis",Artemis );
-
-
-// var player = function(){
-
-// }
-// var actor = function(){
-
-// }
-//
-// let newAbility = function(x,y){
-// 	this.ability = x,
-// 	this.damage = y
-// }
-// let badJokes = new newAbility("Bad Jokes", 5);
-//
-let newAbility = function() {
- 	this.ability = "Bare Hands";
- 	this.damage = 2;
- };
-
- ///// other abilities/////
-
- let badJokes = function() {
- 	this.ability = "Bad Jokes";
- 	this.damage	= 8;
- };
-
+var Ares = new Greek("Ares", 45,50,15)
+var Ra = new Persian("Ra",50,40,15);
+var Amun = new Persian("Amun",45,50,15);
+var Khepri = new Persian("Khepri",45,65,10);
+var Khnum = new Persian("Khnum",40,60,20);
