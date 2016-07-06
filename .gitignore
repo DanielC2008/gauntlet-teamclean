@@ -1,1 +1,5 @@
 node_modules
+thumbs.db
+.DS_store
+.sublime-gulp.cache
+sublime-gulp.log
