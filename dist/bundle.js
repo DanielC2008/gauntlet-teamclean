@@ -1,64 +1,55 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-/*
-  Test code to generate a human player and an orc player
- */
-var warrior = new Gauntlet.Combatants.Human();
-warrior.setWeapon(new WarAxe());
-warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
 
-var orc = new Gauntlet.Combatants.Orc();
-orc.generateClass();
-orc.setWeapon(new BroadSword());
-console.log(orc.toString());
+},{}],2:[function(require,module,exports){
+"use strict";
 
-/*
-  Test code to generate a spell
- */
-var spell = new Gauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
+var Character = function () {
+
+};
+
+var Actor = function () {
+  acting: true;
+};
+
+var Goldblum = function () {
+
+};
+},{}],3:[function(require,module,exports){
+"use strict";
+
+let initPlayer = require("./initPlayer");
+let abilities = require("./Abilities");
+let characters = require("./Character.js");
+
+let playerInfo = {
+  initPlayer, abilities, characters
+};
+
+module.exports = playerInfo;
+},{"./Abilities":1,"./Character.js":2,"./initPlayer":5}],4:[function(require,module,exports){
+"use strict";
+
+let Players = require("./Player.js");
+
+console.log("Player: ", Players.initPlayer.Player("jim"));
 
 
-$(document).ready(function() {
-  /*
-    Show the initial view that accepts player name
-   */
-  $("#player-setup").show();
+},{"./Player.js":3}],5:[function(require,module,exports){
+"use strict";
 
-  /*
-    When any button with card__link class is clicked,
-    move on to the next view.
-   */
-  $(".card__link").click(function(e) {
-    var nextCard = $(this).attr("next");
-    var moveAlong = false;
+var Player = function() {
+  this.playerName = "no name";
+  this.characterName = "no character chosen";
+  this.skill = 50;
+  this.speed = 50;
+  this.health = 100;
+  this.playerWeapon = null;
+};
 
-    switch (nextCard) {
-      case "card--class":
-        moveAlong = ($("#player-name").val() !== "");
-        break;
-      case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
-        break;
-    }
-
-    if (moveAlong) {
-      $(".card").hide();
-      $("." + nextCard).show();
-    }
-  });
-
-  /*
-    When the back button clicked, move back a view
-   */
-  $(".card__back").click(function(e) {
-    var previousCard = $(this).attr("previous");
-    $(".card").hide();
-    $("." + previousCard).show();
-  });
-
-});
-},{}]},{},[1])
+module.exports = {
+  Player
+};
+},{}]},{},[4])
 
 
 //# sourceMappingURL=bundle.js.map
