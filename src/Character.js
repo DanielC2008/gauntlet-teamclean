@@ -83,7 +83,7 @@ var billMurray = new BillMurray();
 
 var Seal = function () {
   this.characterName = "Seal";
-  this.health = 150;
+  this.health = 100;
   this.skillBonus = 55;
   this.speedBonus = 15;
 };
