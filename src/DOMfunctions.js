@@ -11,6 +11,7 @@ var populateDom = function(){
 	}
 }
 var addClickListeners = function(){
+	let user1;
 	var buttons = document.querySelectorAll('.characterButton');
 	for(let i = 0; i < buttons.length; i ++){
 		buttons[i].addEventListener("click", function(){
@@ -19,7 +20,7 @@ var addClickListeners = function(){
 			for(let i = 0; i < characterArray.length; i ++){
 				let current = characterArray[i];
 				if (test === current.characterName){
-					let user1 = current;
+					user1 = current;
 					console.log("user1",user1 );
 				}
 			}
