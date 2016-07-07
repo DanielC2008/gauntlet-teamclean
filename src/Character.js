@@ -7,6 +7,7 @@ let player = require("./initPlayer.js");
 var Character = function () {
   this.character = true;
   this.skillBonus = 0;
+  this.initiativeBonus = 0;
   this.speedBonus = 0;
   this.singer = false;
   this.actor = false;
@@ -39,6 +40,7 @@ var Goldblum = function () {
   this.functionName = "Goldblum";
   this.health = 300;
   this.skillBonus = 50;
+  this.initiativeBonus = 50;
   this.speedBonus = 50;
 };
 
@@ -49,6 +51,7 @@ var jeffGoldblum = new Goldblum();
 var BettyWhite = function () {
   this.characterName = "Betty White";
   this.health = 100;
+  this.initiativeBonus = 30;
   this.skillBonus = 40;
   this.speedBonus = 50;
 };
@@ -60,6 +63,7 @@ var bettyWhite = new BettyWhite();
 var PaulyShore = function () {
   this.characterName = "PaulyShore";
   this.health = 90;
+  this.initiativeBonus = 25;
   this.skillBonus = 20;
   this.speedBonus = 40;
 };
@@ -71,6 +75,7 @@ var paulyShore = new PaulyShore();
 var BillMurray = function () {
   this.characterName = "Bill Murray";
   this.health = 110;
+  this.initiativeBonus = 35;
   this.skillBonus = 40;
   this.speedBonus = 35;
 };
@@ -84,7 +89,8 @@ var billMurray = new BillMurray();
 var Seal = function () {
   this.characterName = "Seal";
   this.health = 100;
-  this.skillBonus = 55;
+  this.initiativeBonus = 30;
+  this.skillBonus = 35;
   this.speedBonus = 15;
 };
 
@@ -95,6 +101,7 @@ var seal = new Seal();
 var SpiceGirls = function () {
   this.characterName = "The Spice Girls";
   this.health = 125;
+  this.initiativeBonus = 45;
   this.skillBonus = 15;
   this.speedBonus = 40;
 };
@@ -106,7 +113,8 @@ var spiceGirls = new SpiceGirls();
 var Kanye = function () {
   this.characterName = "Kanye";
   this.health = 80;
-  this.skillBonus = 10;
+  this.initiativeBonus = 50;
+  this.skillBonus = 30;
   this.speedBonus = 35;
 };
 
@@ -117,6 +125,7 @@ var kanye = new Kanye();
 var LadyGaga = function () {
   this.characterName = "Lady Gaga";
   this.health = 110;
+  this.initiativeBonus = 45;
   this.skillBonus = 15;
   this.speedBonus = 55;
 };
