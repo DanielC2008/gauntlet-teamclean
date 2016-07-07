@@ -7,19 +7,6 @@ let Players = require("./Player.js");
 var createdCharacter = new Players.initPlayer.Player();
 var container = $("#characterContainer");
 
-function namePlayer () {
-  createdCharacter.playerName = $("#playerName").val();
-  $("#charSelectContainer").removeClass("hidden");
-  // console.log("created character: ", createdCharacter);
-}
-
-function list () {
-  for (var i = 0; i < Players.characters.characterObjects.length; i ++) {
-    var characterButton = $("<button>").html(`${Players.characters.characterObjects[i].characterName}`);
-    container.append(characterButton);
-  }
-}
-
 var enemy = new Players.characters.Seal();
 var newBadJokes = new Players.abilities.badJokes();
 enemy.playerWeapon = newBadJokes;
