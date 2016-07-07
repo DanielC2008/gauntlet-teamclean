@@ -2,10 +2,6 @@
 
 let Players = require("./Player.js");
 let Gods = require("./Gods.js");
-
-// console.log("Gods: ", Gods[1].name);
-
-// var createdCharacter = new Players.initPlayer.Player();
 var container = $("#characterContainer");
 
 // enemy sample object

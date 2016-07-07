@@ -1,25 +1,26 @@
 "use strict";
 
-///// NEW ABILITY CONSTRUCTOR/////
-let newAbility = function() {
+///// NEW ABILITY CONSTRUCTOR /////
+let Ability = function() {
 	this.ability = "Bare Hands";
 	this.damage = 2;
 	this.type = null;
 };
 
-
-///// ABILITY TYPES///////
+///// ABILITY TYPES ///////
 let actorAbility = function() {
-	this.type = actor;
-}
-actorAbility.prototype = newAbility();
+	this.type = "actor";
+};
+
+actorAbility.prototype = new Ability();
 
 let singerAbility = function() {
-	this.type = singer;
-}
-singerAbility.prototype = newAbility();
+	this.type = "singer";
+};
 
-///// ACTOR ABILITIES/////
+singerAbility.prototype = new Ability();
+
+///// ACTOR ABILITIES /////
 let badJokes = function() {
 	this.ability = "Bad Jokes";
 	this.damage = 8;
@@ -64,19 +65,19 @@ let cuteness = function() {
 	this.ability = "Cuteness";
 	this.damage	= 15;	
 };
-cuteness.prototype = new newAbility();
+cuteness.prototype = new Ability();
 
 /////KANYE WEST////////
 let smugness = function() {
 	this.ability = "Smugness";
 	this.damage	= 2;	
 };
-smugness.prototype = new newAbility();
+smugness.prototype = new Ability();
 
 let actorArray = [badJokes, throwShade, passiveAgg]; 
 let singerArray = [sonicScreech, dancing, opera]; 
 
 
 module.exports = {
-	newAbility, badJokes, throwShade, opera, sonicScreech, cuteness, dancing, smugness, actorArray, singerArray
+	badJokes, throwShade, opera, sonicScreech, cuteness, dancing, smugness, actorArray, singerArray
 };
