@@ -1,65 +1,101 @@
 "use strict";
 
 let Players = require("./Player.js");
+let Gods = require("./Gods.js");
 
-// console.log("Player: ", Players.initPlayer.Player("jim"));
+// console.log("Gods: ", Gods[1].name);
 
-var createdCharacter = new Players.initPlayer.Player();
+// var createdCharacter = new Players.initPlayer.Player();
 var container = $("#characterContainer");
 
+// enemy sample object
 var enemy = new Players.characters.Seal();
 var newBadJokes = new Players.abilities.badJokes();
 enemy.playerWeapon = newBadJokes;
 
+// hero sample object
 var hero = new Players.characters.Kanye();
 hero.playerWeapon = newBadJokes;
 
-console.log("enemy: ", enemy.skill, enemy);
-
+function randomNumber (x) {
+  return Math.floor(Math.random() * (x-1) + 1);
+}
 
 function attack (player1, player2) {
-  console.log("attack");
-  console.log("player1: ", player1);
-  console.log("player2: ", player2);
   var player1Attack = player1.skill + player1.skillBonus;
   var player2Attack = player2.skill + player2.skillBonus;
-  player1Attack = player1Attack/5;
-  player1Attack = player1Attack + Math.floor(Math.random() * (10-1) + 1);
-  player2Attack = player2Attack/5;
-  player2Attack = player2Attack + Math.floor(Math.random() * (10-1) + 1);
+
+  // damage math
+  player1Attack = player1Attack/5 + randomNumber(10);
+  player2Attack = player2Attack/5 + randomNumber(10);
+
+  // crit chance
+  if (randomNumber(20) > 16) {
+    player1Attack = player1Attack * 2;
+  }
+  if (randomNumber(20) > 16) {
+    player2Attack = player2Attack * 2;
+  }
+
+  var dodgeChance1 = player1.speed + player1.speedBonus;
+  dodgeChance1 = dodgeChance1/10 + randomNumber(10);
+  if (dodgeChance1 >= 18) {
+    player2Attack = 0;
+  }
+  var dodgeChance2 = player2.speed + player2.speedBonus;
+  dodgeChance2 = dodgeChance2/10 + randomNumber(10);
+  if (dodgeChance2 >= 18) {
+    player1Attack = 0;
+  }
+
+  console.log("player1: ", player1.characterName, player1Attack);
+  console.log("player2: ", player2.characterName, player2Attack);
+
+  // hitting each other
   player2.health = player2.health - player1Attack;
   if (player2.health < 0) {
-    console.log("winner: player");
+    console.log("winner: ", player1.characterName);
+    $("#attackButton").attr("disabled", true);
     return;
   }
   player1.health = player1.health - player2Attack;
   if (player1.health < 0) {
-    console.log("winner: computer");
+    console.log("winner: ", player2.characterName);
+    $("#attackButton").attr("disabled", true);
     return;
   }
 }
 
 function initiative (hero, enemy) {
-  var heroInitiative = hero.speed + hero.speedBonus;
-  heroInitiative = heroInitiative/4;
-  heroInitiative = heroInitiative + Math.floor(Math.random() * (10 - 1) +1);
-  var enemyInitiative = enemy.speed + enemy.speedBonus;
-  enemyInitiative = enemyInitiative/4;
-  enemyInitiative = enemyInitiative + Math.floor(Math.random() * (10 - 1) +1);
-  console.log("enemy: ", enemyInitiative);
-  console.log("heroInitiative", heroInitiative);
+  var heroInitiative = hero.initiative + hero.initiativeBonus;
+  heroInitiative = heroInitiative/4 + randomNumber(10);
+
+  var enemyInitiative = enemy.initiative + enemy.initiativeBonus;
+  enemyInitiative = enemyInitiative/4 + randomNumber(10);
+
   if (heroInitiative > enemyInitiative) {
-    console.log("hero initiative: ");
     attack(hero, enemy);
   } else {
-    console.log("enemy wins over: ", enemyInitiative);
     attack(enemy, hero);
   }
 }
 
-// $("#attackButton").click(attack(hero, enemy));
+var theEnemy;
 
-initiative(hero, enemy);
+function spawnEnemy () {
+  theEnemy = Gods[randomNumber(Gods.length) - 1];
+  console.log("god: ", theEnemy);
+    $("#attackButton").attr("disabled", false);
+}
 
+$("#spawnButton").click( function () {
+  spawnEnemy();
+})
 
-// list();
+$("#attackButton").click( function () {
+  if ( theEnemy == undefined) {
+    console.log("no one to fight tho");
+    return
+  }
+  initiative(hero, theEnemy);
+});
