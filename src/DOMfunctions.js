@@ -1,6 +1,8 @@
 "use-strict"
+let Abilities = require("./Abilities.js")
 let Characters = require("./Character.js");
 let characterArray = Characters.characterObjects;
+let user = []
 console.log("character",characterArray );
 
 var populateDom = function(){
@@ -10,23 +12,25 @@ var populateDom = function(){
 	}
 }
 var addClickListeners = function(){
+	let user1 = null;
 	var buttons = document.querySelectorAll('.characterButton');
 	for(let i = 0; i < buttons.length; i ++){
 		buttons[i].addEventListener("click", function(){
 			let test = this.innerHTML;
-			console.log("test",test );
 			for(let i = 0; i < characterArray.length; i ++){
 				let current = characterArray[i];
 				if (test === current.characterName){
-					let user1 = current;
-					console.log("user1",user1 );
+					user1 = current;
+					user.push(user1)
 				}
 			}
 		})
 	}
-	return user1
+
 }
 
 
 
-module.exports = { populateDom, addClickListeners,}
+
+
+module.exports = { populateDom, addClickListeners, user}

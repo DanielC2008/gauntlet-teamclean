@@ -13,15 +13,13 @@ function namePlayer () {
   $("#charSelectContainer").removeClass("hidden");
   console.log("created character: ", createdCharacter);
 }
+
+$(document).on("click", "button.characterButton", function(){
+	let User = Players.Dom.user;
+	console.log("user",User );
+})
+
 Players.Dom.populateDom()
 Players.Dom.addClickListeners();
-Players.Dom.user1
-function userTest () {
-	console.log("user: ", Players.Dom.user1);
-}
-
-$("#addPlayerName").click( function () {
-	userTest();
-})
 
 var enemy = new Players.initPlayer.Player
