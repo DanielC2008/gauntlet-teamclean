@@ -90,12 +90,12 @@ function spawnEnemy () {
 
 $("#spawnButton").click( function () {
   spawnEnemy();
-})
+});
 
 $("#attackButton").click( function () {
-  if ( theEnemy == undefined) {
+  if ( theEnemy === undefined) {
     console.log("no one to fight tho");
-    return
+    return;
   }
   initiative(hero, theEnemy);
 });
