@@ -2,10 +2,6 @@
 
 let Players = require("./Player.js");
 let Gods = require("./Gods.js");
-
-// console.log("Gods: ", Gods[1].name);
-
-// var createdCharacter = new Players.initPlayer.Player();
 var container = $("#characterContainer");
 
 // enemy sample object
@@ -90,12 +86,12 @@ function spawnEnemy () {
 
 $("#spawnButton").click( function () {
   spawnEnemy();
-})
+});
 
 $("#attackButton").click( function () {
-  if ( theEnemy == undefined) {
+  if ( theEnemy === undefined) {
     console.log("no one to fight tho");
-    return
+    return;
   }
   initiative(hero, theEnemy);
 });
