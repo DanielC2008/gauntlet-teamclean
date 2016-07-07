@@ -24,47 +24,55 @@ var enemy = new Players.characters.Seal();
 var newBadJokes = new Players.abilities.badJokes();
 enemy.playerWeapon = newBadJokes;
 
-var hero = new Players.characters.Goldblum();
+var hero = new Players.characters.Kanye();
 hero.playerWeapon = newBadJokes;
 
 console.log("enemy: ", enemy.skill, enemy);
 
 
-function attack (player, computer) {
-  var playerAttack = player.skill + player.skillBonus;
-  var computerAttack = computer.skill + computer.skillBonus;
-  playerAttack = playerAttack/5;
-  playerAttack = playerAttack + Math.floor(Math.random() * (10-1) + 1);
-  computerAttack = computerAttack/5;
-  computerAttack = computerAttack + Math.floor(Math.random() * (10-1) + 1);
-  computer.health = computer.health - playerAttack;
-  if (computer.health < 0) {
+function attack (player1, player2) {
+  console.log("attack");
+  console.log("player1: ", player1);
+  console.log("player2: ", player2);
+  var player1Attack = player1.skill + player1.skillBonus;
+  var player2Attack = player2.skill + player2.skillBonus;
+  player1Attack = player1Attack/5;
+  player1Attack = player1Attack + Math.floor(Math.random() * (10-1) + 1);
+  player2Attack = player2Attack/5;
+  player2Attack = player2Attack + Math.floor(Math.random() * (10-1) + 1);
+  player2.health = player2.health - player1Attack;
+  if (player2.health < 0) {
     console.log("winner: player");
-    return
+    return;
   }
-  player.health = player.health - computerAttack;
-  if (player.health < 0) {
+  player1.health = player1.health - player2Attack;
+  if (player1.health < 0) {
     console.log("winner: computer");
-    return
+    return;
   }
-  console.log("player attack random: ", playerAttack);
+}
 
-  console.log("player", player.health);
-  console.log("computer", computer.health);
+function initiative (hero, enemy) {
+  var heroInitiative = hero.speed + hero.speedBonus;
+  heroInitiative = heroInitiative/4;
+  heroInitiative = heroInitiative + Math.floor(Math.random() * (10 - 1) +1);
+  var enemyInitiative = enemy.speed + enemy.speedBonus;
+  enemyInitiative = enemyInitiative/4;
+  enemyInitiative = enemyInitiative + Math.floor(Math.random() * (10 - 1) +1);
+  console.log("enemy: ", enemyInitiative);
+  console.log("heroInitiative", heroInitiative);
+  if (heroInitiative > enemyInitiative) {
+    console.log("hero initiative: ");
+    attack(hero, enemy);
+  } else {
+    console.log("enemy wins over: ", enemyInitiative);
+    attack(enemy, hero);
+  }
 }
 
 // $("#attackButton").click(attack(hero, enemy));
 
-attack(hero, enemy);
-attack(hero, enemy);
-
-attack(hero, enemy);
-
-attack(hero, enemy);
-attack(hero, enemy);
-attack(hero, enemy);
-attack(hero, enemy);
-attack(hero, enemy);
+initiative(hero, enemy);
 
 
-list();
+// list();
