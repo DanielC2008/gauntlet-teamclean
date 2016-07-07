@@ -1,16 +1,19 @@
 "use strict";
 
 let Players = require("./Player.js");
+let Gods = require("./Gods.js");
 
-// console.log("Player: ", Players.initPlayer.Player("jim"));
+// console.log("Gods: ", Gods[1].name);
 
-var createdCharacter = new Players.initPlayer.Player();
+// var createdCharacter = new Players.initPlayer.Player();
 var container = $("#characterContainer");
 
+// enemy sample object
 var enemy = new Players.characters.Seal();
 var newBadJokes = new Players.abilities.badJokes();
 enemy.playerWeapon = newBadJokes;
 
+// hero sample object
 var hero = new Players.characters.Kanye();
 hero.playerWeapon = newBadJokes;
 
@@ -32,6 +35,17 @@ function attack (player1, player2) {
   }
   if (randomNumber(20) > 16) {
     player2Attack = player2Attack * 2;
+  }
+
+  var dodgeChance1 = player1.speed + player1.speedBonus;
+  dodgeChance1 = dodgeChance1/10 + randomNumber(10);
+  if (dodgeChance1 >= 18) {
+    player2Attack = 0;
+  }
+  var dodgeChance2 = player2.speed + player2.speedBonus;
+  dodgeChance2 = dodgeChance2/10 + randomNumber(10);
+  if (dodgeChance2 >= 18) {
+    player1Attack = 0;
   }
 
   console.log("player1: ", player1.characterName, player1Attack);
@@ -66,6 +80,23 @@ function initiative (hero, enemy) {
   }
 }
 
+var theEnemy = null;
+
+function spawnEnemy () {
+  theEnemy = Gods[randomNumber(Gods.length) - 1];
+  console.log("god: ", theEnemy);
+    $("#attackButton").attr("disabled", false);
+
+}
+
+$("#spawnButton").click( function () {
+  spawnEnemy();
+})
+
 $("#attackButton").click( function () {
-  initiative(hero, enemy);
+  if ( spawnEnemy === null) {
+    console.log("no one to fight tho");
+    return
+  }
+  initiative(hero, theEnemy);
 });
