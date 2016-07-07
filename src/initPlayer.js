@@ -9,6 +9,7 @@ var Player = function() {
   this.playerWeapon = null;
 };
 
+
 module.exports = {
   Player
 };

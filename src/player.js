@@ -8,4 +8,5 @@ let playerInfo = {
   initPlayer, abilities, characters
 };
 
+
 module.exports = playerInfo;
