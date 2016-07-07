@@ -30,13 +30,13 @@ var Persian = function(name,health,strength,speed, initiative) {
 
 Persian.prototype = new God();
 // create each enemy
-var Zeus = new Greek("Zeus",45,65,10, 35);
-var Athena = new Greek("Athena",50,40,15, 25);
-var Artemis = new Greek("Artemis",40,60,20, 20);
-var Ares = new Greek("Ares", 45,50,15, 15);
-var Ra = new Persian("Ra",50,40,15, 25);
-var Amun = new Persian("Amun",45,50,15, 30);
-var Khepri = new Persian("Khepri",45,65,10, 20);
-var Khnum = new Persian("Khnum",40,60,20, 15);
+var Zeus = new Greek("Zeus",100,65,10, 35);
+var Athena = new Greek("Athena",100,40,15, 25);
+var Artemis = new Greek("Artemis",100,60,20, 20);
+var Ares = new Greek("Ares", 100,50,15, 15);
+var Ra = new Persian("Ra",100,40,15, 25);
+var Amun = new Persian("Amun",100,50,15, 30);
+var Khepri = new Persian("Khepri",100,65,10, 20);
+var Khnum = new Persian("Khnum",100,60,20, 15);
 
 module.exports = [ Zeus, Athena, Artemis, Ares, Ra, Amun, Khepri, Khnum ];
