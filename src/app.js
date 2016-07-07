@@ -20,6 +20,8 @@ function list () {
   }
 }
 
+
+
 var enemy = new players.initPlayer.Player
 
 list();
