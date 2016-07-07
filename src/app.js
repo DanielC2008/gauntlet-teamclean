@@ -80,13 +80,12 @@ function initiative (hero, enemy) {
   }
 }
 
-var theEnemy = null;
+var theEnemy;
 
 function spawnEnemy () {
   theEnemy = Gods[randomNumber(Gods.length) - 1];
   console.log("god: ", theEnemy);
     $("#attackButton").attr("disabled", false);
-
 }
 
 $("#spawnButton").click( function () {
@@ -94,7 +93,7 @@ $("#spawnButton").click( function () {
 })
 
 $("#attackButton").click( function () {
-  if ( spawnEnemy === null) {
+  if ( theEnemy == undefined) {
     console.log("no one to fight tho");
     return
   }

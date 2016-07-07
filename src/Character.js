@@ -136,6 +136,7 @@ var ladyGaga = new LadyGaga();
 
 var characterObjects = [ jeffGoldblum, bettyWhite, paulyShore, billMurray, seal, spiceGirls, kanye, ladyGaga ];
 
-module.exports = { 
+module.exports = {
+
   Goldblum, BettyWhite, PaulyShore, BillMurray, Seal, SpiceGirls, Kanye, LadyGaga, characterObjects
 };
