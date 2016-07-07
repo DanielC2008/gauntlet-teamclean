@@ -1,4 +1,6 @@
+"use-strict"
 //create god function with base stats
+let gods = []
 const God = function(){
 	this.characterName = null,
 	this.skill = 50,
@@ -35,3 +37,24 @@ var Ra = new Persian("Ra",50,40,15);
 var Amun = new Persian("Amun",45,50,15);
 var Khepri = new Persian("Khepri",45,65,10);
 var Khnum = new Persian("Khnum",40,60,20);
+
+gods.push(Athena);
+gods.push(Zeus);
+gods.push(Artemis);
+gods.push(Ares);
+gods.push(Ra);
+gods.push(Amun);
+gods.push(Khepri);
+gods.push(Khnum);
+let user1;
+for(let i = 0; i < gods.length; i ++){
+	current = gods[i];
+	var text = document.querySelector('.athena').innerHTML;
+	if (text === current.name){
+		user1 = current;
+	}
+}
+
+function addAttack(user,attack,attackName,attackDamage){
+	user.attack = attack{attackName:attackDamage}
+}
