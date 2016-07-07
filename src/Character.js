@@ -1,5 +1,7 @@
 "use strict";
 
+let player = require("./initPlayer.js");
+
 // // // initial character function // // //
 
 var Character = function () {
@@ -9,6 +11,8 @@ var Character = function () {
   this.singer = false;
   this.actor = false;
 };
+
+Character.prototype = new player.Player();
 
 // // // classification of characters // // //
 
@@ -69,7 +73,7 @@ var BillMurray = function () {
   this.health = 110;
   this.skillBonus = 40;
   this.speedBonus = 35;
-}
+};
 
 BillMurray.prototype = new Actor();
 
@@ -79,10 +83,10 @@ var billMurray = new BillMurray();
 
 var Seal = function () {
   this.characterName = "Seal";
-  this.health = 100;
+  this.health = 150;
   this.skillBonus = 55;
   this.speedBonus = 15;
-}
+};
 
 Seal.prototype = new Singer();
 
@@ -93,7 +97,7 @@ var SpiceGirls = function () {
   this.health = 125;
   this.skillBonus = 15;
   this.speedBonus = 40;
-}
+};
 
 SpiceGirls.prototype = new Singer();
 
@@ -104,7 +108,7 @@ var Kanye = function () {
   this.health = 80;
   this.skillBonus = 10;
   this.speedBonus = 35;
-}
+};
 
 Kanye.prototype = new Singer();
 
@@ -115,14 +119,14 @@ var LadyGaga = function () {
   this.health = 110;
   this.skillBonus = 15;
   this.speedBonus = 55;
-}
+};
 
 LadyGaga.prototype = new Singer();
 
 var ladyGaga = new LadyGaga();
 
-var characterObjects = [ jeffGoldblum, bettyWhite, paulyShore, billMurray, seal, spiceGirls, kanye, ladyGaga ]
+var characterObjects = [ jeffGoldblum, bettyWhite, paulyShore, billMurray, seal, spiceGirls, kanye, ladyGaga ];
 
 module.exports = { 
   Goldblum, BettyWhite, PaulyShore, BillMurray, Seal, SpiceGirls, Kanye, LadyGaga, characterObjects
-}
+};
