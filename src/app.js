@@ -1,10 +1,11 @@
 "use strict";
 
-let Players = require("./Player.js");
+let Players = require("./player.js");
+
 
 console.log("Player: ", Players.initPlayer.Player("jim"));
 
-var createdCharacter = new players.initPlayer.Player();
+var createdCharacter = new Players.initPlayer.Player();
 console.log("createdCharacter: ", createdCharacter);
 
 function namePlayer () {
@@ -12,16 +13,15 @@ function namePlayer () {
   $("#charSelectContainer").removeClass("hidden");
   console.log("created character: ", createdCharacter);
 }
-
-function list () {
-  for (var i = 0; i < players.characters.characterObjects.length; i ++) {
-    var characterButton = $("<button>").html(`${players.characters.characterObjects[i].characterName}`);
-    container.append(characterButton);
-  }
+Players.Dom.populateDom()
+Players.Dom.addClickListeners();
+Players.Dom.user1
+function userTest () {
+	console.log("user: ", Players.Dom.user1);
 }
 
+$("#addPlayerName").click( function () {
+	userTest();
+})
 
-
-var enemy = new players.initPlayer.Player
-
-list();
+var enemy = new Players.initPlayer.Player
