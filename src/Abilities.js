@@ -10,7 +10,7 @@ let newAbility = function() {
 
 let badJokes = function() {
 	this.ability = "Bad Jokes";
-	this.damage	= 8;	
+	this.damage = 8;
 };
 
 badJokes.prototype = new newAbility();
