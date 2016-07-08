@@ -86,7 +86,6 @@ let cute = new cuteness();
 let actorArray = [newBadJokes, newThrowShade, newPassiveAgg, cute]; 
 let singerArray = [newSonicScreech, newDancing, newOpera, smug]; 
 
-
 module.exports = {
 	badJokes, throwShade, opera, sonicScreech, cuteness, dancing, smugness, actorArray, singerArray
 };
