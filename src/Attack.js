@@ -16,7 +16,6 @@ function randomNumber (x) {
 }
 
 function attack (player1, player2, hero, enemy) {
-  console.log("attack");
   let player1Attack = player1.skill + player1.skillBonus;
   let player2Attack = player2.skill + player2.skillBonus;
 
@@ -43,8 +42,6 @@ function attack (player1, player2, hero, enemy) {
     player1Attack = 0;
   }
 
-  console.log("hero: ", hero);
-  console.log("enemy", enemy);
   // hitting each other
   player2.health = player2.health - player1Attack;
   if (player2.health < 0) {
@@ -69,7 +66,6 @@ function winnerAnnouncement (winner) {
 
 function initiative (hero, enemy) {
   if ( enemy === undefined) {
-    console.log("no one to fight tho");
     return;
   }
 
