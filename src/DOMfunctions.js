@@ -10,7 +10,7 @@ let populateDom = function(){
 	for (let i = 0; i < characterArray.length; i ++){
 		$('#characterContainer').append(`<button class="characterButton">${characterArray[i].characterName}</button>`);
 	}
-	$('#charSelectContainer:nth-child(n)').on("click", selectCharacter);
+	$('#charSelectContainer').on("click", selectCharacter);
 	$('#charSelectContainer').removeClass('hidden');
 };
 
@@ -30,22 +30,38 @@ let selectCharacter = function(){
 	// console.log(user1);
 
 let populateAbility = function(user1) {
+	let currentArray;
+	let container = $("#abilityContainer").removeClass("hidden");
 	if (user1.profession === "actor") {
 		Abilities.actorArray.forEach(function(index) { 
-			$('#abilityContainer').append(`<button class="abilityButton">${index.ability}</button>`);
+		let button = $("<button>").addClass("abilityButton").html(`${index.ability}`);
+			container.append(button);
+			currentArray = Abilities.actorArray;
+			button.click(function() {
+				selectAbility(user1, currentArray);
+			});
 		});
 	}
 	else {
 		Abilities.singerArray.forEach(function(index) { 
-			$('#abilityContainer').append(`<button class="abilityButton">${index.ability}</button>`);
+		let button = $("<button>").addClass("abilityButton").html(`${index.ability}`);
+			container.append(button);
+			currentArray = Abilities.singerArray;
+			button.click(function() {
+				selectAbility(user1, currentArray);
+			});
 		});
 	}
-
-	$('#charSelectAbility:nth-child(n)').on("click", selectAbility);
 };
 
-let selectAbility = function() {
-
+let selectAbility = function(user1, currentArray) {
+	$("#abilityContainer").addClass("hidden");
+	currentArray.forEach(function(index) {
+		if (event.target.innerHTML === index.ability) {
+			user1.ability = index;
+			user.push(user1);
+		}
+	});
 };
 
 module.exports = {populateDom, selectCharacter, user};

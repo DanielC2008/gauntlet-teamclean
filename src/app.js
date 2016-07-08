@@ -98,10 +98,4 @@ $("#attackButton").click( function () {
   initiative(hero, theEnemy);
 });
 
-//////Set User/////////
-$(document).on("click", "button.characterButton", function(){
-  User = Players.Dom.user;
-  console.log("user",User );
-});
-
 Players.Dom.populateDom();
