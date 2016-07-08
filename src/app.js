@@ -1,6 +1,7 @@
 "use strict";
 
 let Players = require("./player.js");
+let User;
 
 
 console.log("Player: ", Players.initPlayer.Player("jim"));
@@ -15,7 +16,7 @@ function namePlayer () {
 }
 
 $(document).on("click", "button.characterButton", function(){
-	let User = Players.Dom.user;
+	User = Players.Dom.user;
 	console.log("user",User );
 })
 
