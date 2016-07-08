@@ -64,8 +64,9 @@ let selectAbility = function(user1, currentArray) {
 	});
 };
 
-module.exports = {populateDom, selectCharacter, user};
-
+module.exports = {
+	populateDom, selectCharacter, user
+};
 
 // let selectCharacter = function(){
 // 	let user1 = null;
