@@ -4,7 +4,7 @@ let Players = require("./player");
 let Gods = require("./Gods");
 
 let container = $("#characterContainer");
-let User;  
+let User;
 
 // enemy sample object
 var enemy = new Players.characters.Seal();
@@ -88,6 +88,7 @@ function spawnEnemy () {
 
 $("#spawnButton").click( function () {
   spawnEnemy();
+  Players.Dom.addCharacterCards();
 });
 
 $("#attackButton").click( function () {
