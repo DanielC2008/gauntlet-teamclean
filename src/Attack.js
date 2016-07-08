@@ -65,7 +65,19 @@ function attack (player1, player2, hero, enemy) {
 function winnerAnnouncement (winner) {
   let announcement = $("<h3>").html(`The winner is ${winner.characterName} with the use of ${winner.ability.ability}!`);
   $("#announcement").append(announcement);
+  $("#gridSystemModal").modal("show");
+  setInterval(function() { chooseId() }, 1000);
 }
+
+let chooseId = function() {
+  let counter = 0;
+  let chosenNum = Math.floor(Math.random() * (8 - 1) + 1);
+  $(`#reveal--${chosenNum}`).removeClass("hidden");
+  counter = counter + 1;
+  if (counter === 30) {
+    clearInterval(chooseId);
+  }
+};
 
 function initiative (hero, enemy) {
   if ( enemy === undefined) {

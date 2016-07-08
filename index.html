@@ -21,14 +21,15 @@
         <div id="enemyDiv" class="fighter col-md-4 col-md-offset-4"></div>        
       </div>
     </div>
-  <button id="attackButton" class="btn btn--orange">Attack</button>
-  <div id="announcement"></div>
+  <!-- <div id="announcement"></div> -->
+  <button id="fightReady">Ready to Fight?</button>
+  <button id="attackButton" type="" class="btn btn--orange hidden">Attack</button>
 
 
   <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" id="announcement">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="gridModalLabel"></h4>
       </div>
@@ -62,9 +63,7 @@
   </div>
 </div>
 <div class="bd-example bd-example-padded-bottom">
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gridSystemModal">
-    Launch demo modal
-  </button>
+<button id="modalButton">Click</button>
 </div>
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>

@@ -64,10 +64,5 @@ let selectAbility = function(user1, currentArray) {
 	});
 };
 
-
-$("#modalButton").click(function(){
-	$("#gridSystemModal").modal("show");
-});
-
 module.exports = {populateDom, selectCharacter, user};
 
