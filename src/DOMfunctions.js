@@ -8,7 +8,7 @@ let user = [];
 
 let populateDom = function(){
 	for (let i = 0; i < characterArray.length; i ++){
-		$('#characterContainer').append(`<button class="characterButton">${characterArray[i].characterName}</button>`);
+		$('#characterContainer').append(`<button class=" btn--yellow characterButton">${characterArray[i].characterName}</button>`);
 	}
 	$('#charSelectContainer').on("click", selectCharacter);
 	$('#charSelectContainer').removeClass('hidden');
@@ -65,24 +65,5 @@ let selectAbility = function(user1, currentArray) {
 	});
 };
 
-module.exports = {
-	populateDom, selectCharacter, user
-};
+module.exports = {populateDom, selectCharacter, user};
 
-// let selectCharacter = function(){
-// 	let user1 = null;
-// 	var buttons = document.querySelectorAll('.characterButton').;
-// 	for(let i = 0; i < buttons.length; i ++){
-// 		buttons[i].addEventListener("click", function(){
-// 			let test = this.innerHTML;
-// 			for(let i = 0; i < characterArray.length; i ++){
-// 				let current = characterArray[i];
-// 				if (test === current.characterName){
-// 					user1 = current;
-// 					user.push(user1);
-// 				}
-// 			}
-// 		});
-// 	}
-
-// };
