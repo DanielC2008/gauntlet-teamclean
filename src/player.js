@@ -2,10 +2,10 @@
 
 let initPlayer = require("./initPlayer");
 let abilities = require("./Abilities");
-let characters = require("./Character.js");
+let characters = require("./Character");
 
 let playerInfo = {
-  initPlayer, abilities, characters
+  initPlayer, abilities, characters, Dom
 };
 
 

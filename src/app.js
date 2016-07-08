@@ -3,9 +3,20 @@
 let Players = require("./Player.js");
 let Gods = require("./Gods.js");
 let Attack = require("./Attack.js");
+let Dom = require("./DOMfunctions");
 
-// let container = $("#characterContainer");
+let user;  
+let theEnemy;
 
-// enemy sample object
+$("#fightReady").click( function () {
+  user = Dom.user[0];
+  theEnemy = Attack.spawnEnemy();
+  $("#attackButton").removeClass("hidden");
+  $("#fightReady").addClass("hidden");
+});
 
-// hero sample object
+$("#attackButton").click( function () {
+  Attack.initiative(user, theEnemy);
+});
+
+Dom.populateDom();
