@@ -8,7 +8,7 @@ let user = [];
 
 let populateDom = function(){
 	for (let i = 0; i < characterArray.length; i ++){
-		$('#characterContainer').append(`<button class="characterButton">${characterArray[i].characterName}</button>`);
+		$('#characterContainer').append(`<button class=" btn--yellow characterButton">${characterArray[i].characterName}</button>`);
 	}
 	$('#charSelectContainer').on("click", selectCharacter);
 	$('#charSelectContainer').removeClass('hidden');
@@ -63,6 +63,10 @@ let selectAbility = function(user1, currentArray) {
 		}
 	});
 };
+
+$("#modalButton").click(function(){
+	$("#gridSystemModal").modal("show");
+});
 
 module.exports = {populateDom, selectCharacter, user};
 

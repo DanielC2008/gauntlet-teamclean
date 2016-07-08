@@ -16,6 +16,10 @@ body {
   min-width: 500px;
 }
 
+.fighter {
+  border: 4px solid black;
+  height: 250px;
+}
 
 
 /*
