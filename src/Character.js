@@ -42,6 +42,7 @@ var Goldblum = function () {
   this.skillBonus = 50;
   this.initiativeBonus = 50;
   this.speedBonus = 50;
+  this.image = "http://images.hellogiggles.com/uploads/2016/04/15033920/jurass-park-4-world-jeff-goldblum.jpg";
 };
 
 Goldblum.prototype = new Actor();
@@ -54,6 +55,7 @@ var BettyWhite = function () {
   this.initiativeBonus = 30;
   this.skillBonus = 40;
   this.speedBonus = 50;
+  this.image = "https://pbs.twimg.com/profile_images/1125351141/BettyWhite1.jpg";
 };
 
 BettyWhite.prototype = new Actor();
@@ -66,6 +68,7 @@ var PaulyShore = function () {
   this.initiativeBonus = 25;
   this.skillBonus = 20;
   this.speedBonus = 40;
+  this.image = "https://www.picsofcelebrities.com/celebrity/pauly-shore/pictures/large/best-pictures-of-pauly-shore.jpg";
 };
 
 PaulyShore.prototype = new Actor();
@@ -78,6 +81,7 @@ var BillMurray = function () {
   this.initiativeBonus = 35;
   this.skillBonus = 40;
   this.speedBonus = 35;
+  this.image = "https://loftcinema.com/files/2015/06/murraybig.jpg";
 };
 
 BillMurray.prototype = new Actor();
@@ -92,6 +96,7 @@ var Seal = function () {
   this.initiativeBonus = 30;
   this.skillBonus = 35;
   this.speedBonus = 15;
+  this.image = "https://66.media.tumblr.com/e15628f48389145ed5a22b630d5b8152/tumblr_n3nzmiDmVf1t1zbplo1_500.jpg";
 };
 
 Seal.prototype = new Singer();
@@ -104,6 +109,7 @@ var SpiceGirls = function () {
   this.initiativeBonus = 45;
   this.skillBonus = 15;
   this.speedBonus = 40;
+  this.image = "http://i.onionstatic.com/avclub/5761/23/16x9/640.jpg";
 };
 
 SpiceGirls.prototype = new Singer();
@@ -116,6 +122,7 @@ var Kanye = function () {
   this.initiativeBonus = 50;
   this.skillBonus = 30;
   this.speedBonus = 35;
+  this.image = "http://cdn.lifedaily.com/wp-content/uploads/2015/07/The-Gaurdian-.jpg";
 };
 
 Kanye.prototype = new Singer();
@@ -128,6 +135,7 @@ var LadyGaga = function () {
   this.initiativeBonus = 45;
   this.skillBonus = 15;
   this.speedBonus = 55;
+  this.image = "http://allieiswired.com/wp-content/uploads/2012/11/Lady-Gaga-Wearing-A-Hot-Dog-Costume.jpg";
 };
 
 LadyGaga.prototype = new Singer();

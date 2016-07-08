@@ -55,6 +55,7 @@ let populateAbility = function(user1) {
 };
 
 let selectAbility = function(user1, currentArray) {
+	$("#fightReady").removeClass("hidden");
 	$("#abilityContainer").addClass("hidden");
 	currentArray.forEach(function(index) {
 		if (event.target.innerHTML === index.ability) {
