@@ -93,6 +93,7 @@ function spawnEnemy (enemy) {
 function addCharacterCards (player, enemy){
    $('#playerDiv').html(
      `
+     <img src="${player.image}">
      <div class="playerName">${player.characterName}</div>
      <div class="playerHealth">Health: ${player.health}</div>
      <div class="playerSpeed">Attack: ${player.speed+player.speedBonus}</div>
@@ -102,6 +103,7 @@ function addCharacterCards (player, enemy){
 
    $('#enemyDiv').html(
      `
+     <img src="${enemy.image}">
      <div class="enemyName">${enemy.characterName}</div>
      <div class="enemyHealth">Health: ${enemy.health}</div>
      <div class="enemySpeed">Attack: ${enemy.speed + enemy.speedBonus}</div>
