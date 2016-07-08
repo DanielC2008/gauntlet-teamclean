@@ -2,11 +2,11 @@
 
 var Player = function() {
   this.playerName = "no name";
-  this.characterName = "no character chosen";
+  this.initiative = 50;
   this.skill = 50;
   this.speed = 50;
   this.health = 100;
-  this.playerWeapon = null;
+  this.playerWeapon = [];
 };
 
 
