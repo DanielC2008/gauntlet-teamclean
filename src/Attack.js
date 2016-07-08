@@ -79,7 +79,7 @@ function hitEachOther (player1, player2, player1Attack, player2Attack) {
 }
 
 function winnerAnnouncement (winner) {
-  let announcement = $("<h3>").html(`The winner is ${winner.characterName} with the use of ${winner.ability.ability}!`);
+  let announcement = $("<h3>").html(`The winner is ${winner.characterName} with the use of <h2>${winner.ability.ability}!</h2>`);
   $("#announcement").append(announcement);
   $("#gridSystemModal").modal("show");
   setInterval(function() { chooseId(winner) }, 1000);
