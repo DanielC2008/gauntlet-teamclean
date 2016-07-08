@@ -2,6 +2,7 @@
 //create god function with base stats
 const God = function(){
   this.characterName = null;
+  this.player = false;
   this.skill = 50;
   this.speed = 50;
   this.initiative = 50;
