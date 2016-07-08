@@ -74,8 +74,15 @@ let smugness = function() {
 };
 smugness.prototype = new Ability();
 
-let actorArray = [badJokes, throwShade, passiveAgg]; 
-let singerArray = [sonicScreech, dancing, opera]; 
+let newBadJokes = new badJokes();
+let newThrowShade = new throwShade();
+let newPassiveAgg = new passiveAgg();
+let newSonicScreech = new sonicScreech();
+let newDancing = new dancing();
+let newOpera = new opera();
+
+let actorArray = [newBadJokes, newThrowShade, newPassiveAgg]; 
+let singerArray = [newSonicScreech, newDancing, newOpera]; 
 
 
 module.exports = {

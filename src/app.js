@@ -1,8 +1,10 @@
 "use strict";
 
-let Players = require("./Player.js");
-let Gods = require("./Gods.js");
-var container = $("#characterContainer");
+let Players = require("./player");
+let Gods = require("./Gods");
+
+let container = $("#characterContainer");
+let User;  
 
 // enemy sample object
 var enemy = new Players.characters.Seal();
@@ -95,3 +97,5 @@ $("#attackButton").click( function () {
   }
   initiative(hero, theEnemy);
 });
+
+Players.Dom.populateDom();
