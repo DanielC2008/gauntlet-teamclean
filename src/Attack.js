@@ -15,7 +15,8 @@ function randomNumber (x) {
   return Math.floor(Math.random() * (x-1) + 1);
 }
 
-function attack (player1, player2) {
+function attack (player1, player2, hero, enemy) {
+  console.log("attack");
   let player1Attack = player1.skill + player1.skillBonus;
   let player2Attack = player2.skill + player2.skillBonus;
 
@@ -42,29 +43,28 @@ function attack (player1, player2) {
     player1Attack = 0;
   }
 
-  console.log("player1: ", player1.characterName, player1Attack);
-  console.log("player2: ", player2.characterName, player2Attack);
-
+  console.log("hero: ", hero);
+  console.log("enemy", enemy);
   // hitting each other
   player2.health = player2.health - player1Attack;
   if (player2.health < 0) {
-    console.log("winner: ", player1.characterName);
     $("#attackButton").attr("disabled", true);
     winnerAnnouncement(player1);
     return;
   }
   player1.health = player1.health - player2Attack;
   if (player1.health < 0) {
-    // console.log("winner: ", player2.characterName);
     winnerAnnouncement(player2);
     $("#attackButton").attr("disabled", true);
     return;
   }
+
+  addCharacterCards(hero, enemy);
 }
 
 function winnerAnnouncement (winner) {
-  console.log("winner announcement:", winner);
-  console.log( `The winner is ${winner.characterName} with the use of ${winner.ability.ability}.` );
+  let announcement = $("<h3>").html(`The winner is ${winner.characterName} with the use of ${winner.ability.ability}!`);
+  $("#announcement").append(announcement);
 }
 
 function initiative (hero, enemy) {
@@ -72,8 +72,7 @@ function initiative (hero, enemy) {
     console.log("no one to fight tho");
     return;
   }
-  console.log("hero: ", hero);
-  console.log("enemy: ", enemy);
+
   let heroInitiative = hero.initiative + hero.initiativeBonus;
   heroInitiative = heroInitiative/4 + randomNumber(10);
 
@@ -81,20 +80,35 @@ function initiative (hero, enemy) {
   enemyInitiative = enemyInitiative/4 + randomNumber(10);
 
   if (heroInitiative > enemyInitiative) {
-    attack(hero, enemy);
+    attack(hero, enemy, hero, enemy);
   } else {
-    attack(enemy, hero);
+    attack(enemy, hero, hero, enemy);
   }
 }
 
 function spawnEnemy (enemy) {
-  // enemy = Gods[randomNumber(Gods.length) - 1];
   return Gods[randomNumber(Gods.length) - 1];
-  // console.log("god: ", enemy);
-    // $("#attackButton").attr("disabled", false);
 }
 
+function addCharacterCards (player, enemy){
+   $('#playerDiv').html(
+     `
+     <div class="playerName">${player.characterName}</div>
+     <div class="playerHealth">Health: ${player.health}</div>
+     <div class="playerSpeed">Attack: ${player.speed+player.speedBonus}</div>
+     <div class="playerAbility">${player.ability.ability}</div>
+     `
+     );
 
+   $('#enemyDiv').html(
+     `
+     <div class="enemyName">${enemy.characterName}</div>
+     <div class="enemyHealth">Health: ${enemy.health}</div>
+     <div class="enemySpeed">Attack: ${enemy.speed + enemy.speedBonus}</div>
+     <div class="enemyAbility">${enemy.ability.ability}</div>
+     `
+     );
+ }
 
 let attackFunctions = {
   randomNumber, attack, initiative, spawnEnemy
