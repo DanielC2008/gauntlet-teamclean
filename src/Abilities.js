@@ -65,14 +65,14 @@ let cuteness = function() {
 	this.ability = "Cuteness";
 	this.damage	= 15;	
 };
-cuteness.prototype = new Ability();
+cuteness.prototype = new actorAbility();
 
 /////KANYE WEST////////
 let smugness = function() {
 	this.ability = "Smugness";
 	this.damage	= 2;	
 };
-smugness.prototype = new Ability();
+smugness.prototype = new singerAbility();
 
 let newBadJokes = new badJokes();
 let newThrowShade = new throwShade();
@@ -80,9 +80,11 @@ let newPassiveAgg = new passiveAgg();
 let newSonicScreech = new sonicScreech();
 let newDancing = new dancing();
 let newOpera = new opera();
+let smug = new smugness();
+let cute = new cuteness();
 
-let actorArray = [newBadJokes, newThrowShade, newPassiveAgg]; 
-let singerArray = [newSonicScreech, newDancing, newOpera]; 
+let actorArray = [newBadJokes, newThrowShade, newPassiveAgg, cute]; 
+let singerArray = [newSonicScreech, newDancing, newOpera, smug]; 
 
 
 module.exports = {

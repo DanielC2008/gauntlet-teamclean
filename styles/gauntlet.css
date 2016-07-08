@@ -8,6 +8,18 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 3em;
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+}
+
+#characterContainer {
+  max-width : 75%;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .field {
@@ -22,8 +34,19 @@ body {
 }
 
 .fighter {
-  border: 4px solid black;
-  height: 250px;
+  /*min-height: 250px;*/
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.fightImg {
+  height: 200px;
+  align-content: center;
+}
+
+.fightImg img {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 /*

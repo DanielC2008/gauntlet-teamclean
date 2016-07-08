@@ -11,6 +11,7 @@ let theEnemy;
 $("#fightReady").click( function () {
   user = Dom.user[0];
   theEnemy = Attack.spawnEnemy();
+  Attack.addCharacterCards(user, theEnemy);
   $("#attackButton").removeClass("hidden");
   $("#fightReady").addClass("hidden");
 });

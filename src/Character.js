@@ -53,7 +53,7 @@ var BettyWhite = function () {
   this.characterName = "Betty White";
   this.health = 100;
   this.initiativeBonus = 30;
-  this.skillBonus = 40;
+  this.skillBonus = 30;
   this.speedBonus = 50;
   this.image = "https://pbs.twimg.com/profile_images/1125351141/BettyWhite1.jpg";
 };
@@ -64,7 +64,7 @@ var bettyWhite = new BettyWhite();
 
 var PaulyShore = function () {
   this.characterName = "Pauly Shore";
-  this.health = 90;
+  this.health = 80;
   this.initiativeBonus = 25;
   this.skillBonus = 20;
   this.speedBonus = 40;
@@ -77,9 +77,9 @@ var paulyShore = new PaulyShore();
 
 var BillMurray = function () {
   this.characterName = "Bill Murray";
-  this.health = 110;
+  this.health = 105;
   this.initiativeBonus = 35;
-  this.skillBonus = 40;
+  this.skillBonus = 30;
   this.speedBonus = 35;
   this.image = "https://loftcinema.com/files/2015/06/murraybig.jpg";
 };
@@ -105,9 +105,9 @@ var seal = new Seal();
 
 var SpiceGirls = function () {
   this.characterName = "The Spice Girls";
-  this.health = 125;
+  this.health = 95;
   this.initiativeBonus = 45;
-  this.skillBonus = 15;
+  this.skillBonus = 25;
   this.speedBonus = 40;
   this.image = "http://i.onionstatic.com/avclub/5761/23/16x9/640.jpg";
 };
@@ -131,9 +131,9 @@ var kanye = new Kanye();
 
 var LadyGaga = function () {
   this.characterName = "Lady Gaga";
-  this.health = 110;
+  this.health = 100;
   this.initiativeBonus = 45;
-  this.skillBonus = 15;
+  this.skillBonus = 25;
   this.speedBonus = 55;
   this.image = "http://allieiswired.com/wp-content/uploads/2012/11/Lady-Gaga-Wearing-A-Hot-Dog-Costume.jpg";
 };
