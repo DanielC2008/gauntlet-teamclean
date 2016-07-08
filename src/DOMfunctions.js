@@ -64,27 +64,10 @@ let selectAbility = function(user1, currentArray) {
 	});
 };
 
+
 $("#modalButton").click(function(){
 	$("#gridSystemModal").modal("show");
 });
 
 module.exports = {populateDom, selectCharacter, user};
 
-
-// let selectCharacter = function(){
-// 	let user1 = null;
-// 	var buttons = document.querySelectorAll('.characterButton').;
-// 	for(let i = 0; i < buttons.length; i ++){
-// 		buttons[i].addEventListener("click", function(){
-// 			let test = this.innerHTML;
-// 			for(let i = 0; i < characterArray.length; i ++){
-// 				let current = characterArray[i];
-// 				if (test === current.characterName){
-// 					user1 = current;
-// 					user.push(user1);
-// 				}
-// 			}
-// 		});
-// 	}
-
-// };

@@ -61,7 +61,7 @@ BettyWhite.prototype = new Actor();
 var bettyWhite = new BettyWhite();
 
 var PaulyShore = function () {
-  this.characterName = "PaulyShore";
+  this.characterName = "Pauly Shore";
   this.health = 90;
   this.initiativeBonus = 25;
   this.skillBonus = 20;
