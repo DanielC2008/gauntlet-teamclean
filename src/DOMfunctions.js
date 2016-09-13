@@ -27,13 +27,12 @@ let selectCharacter = function(){
 	populateAbility(user1);
 };
 
-	// console.log(user1);
 
 let populateAbility = function(user1) {
 	let currentArray;
 	let container = $("#abilityContainer").removeClass("hidden");
 	if (user1.profession === "actor") {
-		Abilities.actorArray.forEach(function(index) { 
+		Abilities.actorArray.forEach(function(index) {
 		let button = $("<button>").addClass("abilityButton").html(`${index.ability}`);
 			container.append(button);
 			currentArray = Abilities.actorArray;
@@ -43,7 +42,7 @@ let populateAbility = function(user1) {
 		});
 	}
 	else {
-		Abilities.singerArray.forEach(function(index) { 
+		Abilities.singerArray.forEach(function(index) {
 		let button = $("<button>").addClass("abilityButton").html(`${index.ability}`);
 			container.append(button);
 			currentArray = Abilities.singerArray;
